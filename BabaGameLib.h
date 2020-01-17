@@ -121,8 +121,6 @@ INPUTS ask_for_input();
 void toggle_bool(bool booleen);
 
 
-
-
 //////// FUNCTIONS DECLARATIONS ////////
 
 

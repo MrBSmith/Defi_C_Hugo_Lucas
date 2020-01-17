@@ -3,20 +3,7 @@
 
 //////// INITIALIZATION ////////
 
-// Initialisation d'une map (Taille de base: 10*10 cases)
-void initialize_map(level* p_current_level, int level_size_x, int level_size_y){
-    p_current_level -> dimension.x = level_size_x;
-    p_current_level -> dimension.y = level_size_y;
-    for(int i = 0; i < level_size_y; i++){
-        for(int j = 0; j < level_size_x; j++){
-            p_current_level -> level_array[j][i].content = ' ';
-            p_current_level -> level_array[j][i].color = NORMAL_TEXT;
-        }
-    }
-}
-
-
-// Initialisation d'un player
+// Initialization of a player
 void initialize_player(player* p_player, level* p_level){
     p_player -> position.x = 0;
     p_player -> position.y = 0;
@@ -33,7 +20,7 @@ void print_current_level(level* p_current_level, player* p_player){
 
     for(int i = -1; i < dim_y + 1; i++){
         for(int j = -1; j < dim_x +1; j++){
-            if (i == -1 || i == dim_y){         // Draw the top and botom border
+            if (i == -1 || i == dim_y){         // Draw the top and bottom border
                 printf("_ ");
             } else if(j == -1 || j == dim_x){   // Draw the left and right border
                 printf("| ");

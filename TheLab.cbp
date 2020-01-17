@@ -31,9 +31,30 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="door.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="door.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="functions.h" />
+		<Unit filename="gameState.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="level.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="level.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="player.h">
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="procedures.h" />
 		<Unit filename="prototypes.h">

@@ -1,6 +1,7 @@
-#ifndef PROCEDURES_H_INCLUDED
-#define PROCEDURES_H_INCLUDED
+#include <stdio.h>
+#include <stdlib.h>
 
+#include "BabaGameLib.h"
 
 //////// PROCEDURE DES ETATS DU JEU ////////
 
@@ -60,6 +61,3 @@ void inventoryProcedure(INPUTS player_input, player* p_player){
 void chatProcedure(INPUTS player_input, player* p_player){
     printf("Chat\n"); // Yet to develop
 }
-
-
-#endif // PROCEDURES_H_INCLUDED
