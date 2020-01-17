@@ -88,6 +88,9 @@ colorVector2 BLUE_BACK_TEXT = {WHITE, BLUE};
 //////// PROTOTYPES ////////
 
 
+//////// INITIALIZE CHAR ARRAY ////////
+void initalise_char_array(int size_x, int size_y, char char_array[size_y][size_x]);
+
 //////// VECTOR2 RELATED FUNCTIONS ////////
 void reset_vector2_pos(vector2* p_position);
 vector2 ceil_position(vector2 position, int x_min, int x_max, int y_min, int y_max);
@@ -194,6 +197,15 @@ void change_text_color(colorVector2 cell_color){
     SetConsoleTextAttribute(hConsole, cell_color.back_col * 16 + cell_color.text_col);
 }
 
+//////// INIITIALIZE CHAR ARRAY ////////
+
+void initalise_char_array(int size_x, int size_y, char char_array[size_y][size_x]){
+    for(int i = 0; i < size_x; i++){
+        for(int j = 0; j < size_y; j++){
+            char_array[i][j] = ' ';
+        }
+    }
+}
 
 //////// PRINT ARRAYS ////////
 

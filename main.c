@@ -19,6 +19,8 @@ int main()
         initialize_map(p_level_list[i], 10, 10);
     }
 
+    // Define the current level
+    level* p_current_level = p_level_list[0];
 
     // Player declaration
     player local_player;
@@ -32,7 +34,7 @@ int main()
 
     // Lance la procedure de l'état actuel en boucle
     while(2){
-        currentStateProcedure(state, p_player);
+        currentStateProcedure(state, p_player, p_current_level);
     }
 
     return 0;
