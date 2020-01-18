@@ -1,6 +1,9 @@
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
 
+#include "BabaGameLib.h"
+#include "level.h"
+
 // Define player type
 typedef struct player{
     char nom[15];

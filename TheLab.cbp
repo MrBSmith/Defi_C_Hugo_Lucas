@@ -31,38 +31,29 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BabaGameLib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="BabaGameLib.h" />
 		<Unit filename="door.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="door.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="functions.h" />
+		<Unit filename="door.h" />
 		<Unit filename="gameState.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="gameState.h" />
 		<Unit filename="level.c">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="level.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="level.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="player.h">
-			<Option target="&lt;{~None~}&gt;" />
+		<Unit filename="player.c">
+			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="procedures.h" />
-		<Unit filename="prototypes.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="types.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="player.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

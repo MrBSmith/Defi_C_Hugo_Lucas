@@ -1,6 +1,8 @@
 #ifndef LEVEL_H_INCLUDED
 #define LEVEL_H_INCLUDED
 
+#include "BabaGameLib.h"
+
 // Define the cells of a level
 typedef struct level_cell{
     char content;
@@ -17,7 +19,6 @@ typedef struct level{
 
 
 //// PROTOTYPES ////
-void initialize_map(level* p_current_level, int level_size_x, int level_size_y);
-void print_current_level(level* p_current_level, player* p_player);
+void initialize_level(level* p_current_level, int level_size_x, int level_size_y);
 
 #endif // LEVEL_H_INCLUDED
