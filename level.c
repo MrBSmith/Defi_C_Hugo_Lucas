@@ -18,7 +18,6 @@ void initialize_level(level* p_current_level, int level_size_x, int level_size_y
 
 // Initialize a door
 void initalize_door(door* p_door, BOOL is_locked, int dest_level_index, int x_dest, int y_dest){
-
     p_door -> content = ' ';
     p_door -> locked = is_locked;
     p_door -> dest_level_index = dest_level_index;
@@ -26,6 +25,7 @@ void initalize_door(door* p_door, BOOL is_locked, int dest_level_index, int x_de
     p_door -> dest_position.y = y_dest;
     p_door -> color = define_text_color(WHITE, BLUE);
 }
+
 
 // Place the given door in the given level at the given position
 void place_door(level* p_target_level, door* p_door, int x_pos, int y_pos){

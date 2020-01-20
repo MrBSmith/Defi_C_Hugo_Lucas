@@ -6,12 +6,12 @@
 //////// PROCEDURE DES ETATS DU JEU ////////
 
 // Redirige vers la procedure de l'etat actuel du jeu
-void currentStateProcedure(game_state state, player* p_player, level* p_current_level){
+void currentStateProcedure(game_state state, player* p_player, level* p_level_list[]){
 
     INPUTS input  = ask_for_input();
 
     switch(state){
-        case MOVE : moveProcedure(input, p_player, p_current_level); break;
+        case MOVE : moveProcedure(input, p_player, p_level_list); break;
         case DIALOGUE : dialogueProcedure(input, p_player); break;
         case INVENTORY : inventoryProcedure(input, p_player); break;
         case CHAT : chatProcedure(input, p_player); break;
@@ -20,14 +20,19 @@ void currentStateProcedure(game_state state, player* p_player, level* p_current_
 
 
 // Procedure de l'etat MOVE
-void moveProcedure(INPUTS player_input, player* p_player, level* p_current_level){
+void moveProcedure(INPUTS player_input, player* p_player, level* p_level_list[]){
+    level* p_current_level = p_player -> p_current_level;
+    door* p_door = p_current_level -> level_array[p_player -> position.x][p_player -> position.y].p_door;
 
     switch(player_input){
         case UP: p_player -> position.y -= 1; break;
         case DOWN: p_player -> position.y += 1; break;
         case RIGHT: p_player -> position.x += 1; break;
         case LEFT: p_player -> position.x -= 1; break;
-        case ENTER: printf("ENTER\n"); break;
+        case ENTER: if(p_door != NULL){
+            // Move the player at the door's destination level and destination position
+            door_change_level(p_player, p_level_list, p_door);
+        } break;
         default: break;
     }
 
@@ -41,7 +46,7 @@ void moveProcedure(INPUTS player_input, player* p_player, level* p_current_level
     printf("Position du joueur: (%d, %d)\n", p_player -> position.x, p_player -> position.y);
 
     // Print current level
-    print_current_level(p_current_level, p_player);
+    print_current_level(p_player);
 }
 
 
@@ -64,8 +69,9 @@ void chatProcedure(INPUTS player_input, player* p_player){
 
 
 // Print current level
-void print_current_level(level* p_current_level, player* p_player){
+void print_current_level(player* p_player){
 
+    level* p_current_level = p_player -> p_current_level;
     int dim_x = p_current_level -> dimension.x;
     int dim_y = p_current_level -> dimension.y;
     colorVector2 normal_text = define_text_color(WHITE, BLACK);
@@ -102,4 +108,11 @@ void print_current_level(level* p_current_level, player* p_player){
         printf("\n");
     }
     printf("\n");
+}
+
+
+// Move the player to the specified destination of the door
+void door_change_level(player* p_player, level* p_level_list[], door* p_door){
+    p_player -> p_current_level = p_level_list[p_door -> dest_level_index];
+    p_player -> position = p_door -> dest_position;
 }
