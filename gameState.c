@@ -71,16 +71,31 @@ void print_current_level(level* p_current_level, player* p_player){
     colorVector2 normal_text = define_text_color(WHITE, BLACK);
 
     for(int i = -1; i < dim_y + 1; i++){
-        for(int j = -1; j < dim_x +1; j++){
-            if (i == -1 || i == dim_y){         // Draw the top and bottom border
+        for(int j = -1; j < dim_x + 1; j++){
+
+            // Draw the top and bottom border
+            if (i == -1 || i == dim_y){
                 printf("_ ");
-            } else if(j == -1 || j == dim_x){   // Draw the left and right border
+
+            // Draw the left and right border
+            } else if(j == -1 || j == dim_x){
                 printf("| ");
-            } else if(p_player -> position.x == j && p_player -> position.y == i){  // Draw the player position
-                printf("X ");
-            } else {                            // Draw the rest of the map
-                change_text_color(p_current_level -> level_array[j][i].color);
-                printf("%c ", p_current_level -> level_array[j][i].content);
+
+             // Draw the player position
+            } else {
+                if(p_current_level -> level_array[j][i].p_door != NULL){
+                    // Draw the element in the appropriate color
+                    change_text_color(p_current_level -> level_array[j][i].p_door -> color);
+                }
+
+                if(p_player -> position.x == j && p_player -> position.y == i){
+                    printf("X ");
+
+                // Draw the rest of the map
+                } else {
+                    printf("%c ", ' ');
+                }
+                // Reset color to normal
                 change_text_color(normal_text);
             }
         }

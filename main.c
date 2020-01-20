@@ -3,10 +3,8 @@
 
 #include "BabaGameLib.h"
 #include "level.h"
-#include "door.h"
 #include "player.h"
 #include "gameState.h"
-
 
 // Main procedure
 int main()
@@ -25,17 +23,11 @@ int main()
 
     // Define the door 1 of level 1
     door door_level1;
-    door* p_door_level1 = door_constructor(&door_level1, FAUX, p_current_level, 5, 5);
+    door* p_door_level1 = &door_level1;
+    initalize_door(p_door_level1, FAUX, 0, 0, 0);
 
-    // Declare the position of the door in level1
-    p_current_level -> level_array[5][8].p_object = malloc(sizeof(door*));
-
-    if(p_current_level -> level_array[5][8].p_object == NULL){
-        exit(0);
-    }
-
-    p_current_level -> level_array[5][8].p_object = p_door_level1;
-
+    // Place the door in the level
+    place_door(p_current_level, p_door_level1, 9, 5);
 
     // Player declaration
     player local_player;
