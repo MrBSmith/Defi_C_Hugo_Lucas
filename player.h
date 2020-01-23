@@ -2,17 +2,15 @@
 #define PLAYER_H_INCLUDED
 
 #include "BabaGameLib.h"
-#include "level.h"
 
 // Define player type
 typedef struct player{
     char nom[15];
     vector2 position;
-    level* p_current_level;
 } player;
 
 
 //// PROTOTYPES ////
-void initialize_player(player* p_player, level* p_level);
+void initialize_player(player* p_player);
 
 #endif // PLAYER_H_INCLUDED

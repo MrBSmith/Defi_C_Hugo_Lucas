@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="BabaGameLib.h" />
+		<Unit filename="door.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="door.h" />
 		<Unit filename="gameState.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -50,6 +54,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="player.h" />
+		<Unit filename="txt_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="txt_file.h" />
+		<Unit filename="wall.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="wall.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
