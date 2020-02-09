@@ -48,7 +48,7 @@ void moveProcedure(INPUTS player_input, player* p_player, level* p_map){
     system("cls");
 
     // Affiche la position du joueur a l'ecran en texte (DEBUG)
-    printf("Position du joueur: (%d, %d)\n", p_player -> position.x, p_player -> position.y);
+    //printf("Position du joueur: (%d, %d)\n", p_player -> position.x, p_player -> position.y);
 
     // Print current level
     print_current_level(p_player, p_map);

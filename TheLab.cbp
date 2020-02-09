@@ -54,6 +54,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="player.h" />
+		<Unit filename="sockets.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="txt_file.c">
 			<Option compilerVar="CC" />
 		</Unit>
